@@ -14,6 +14,13 @@ router.post('/add', jsonParser, async (req, res)=>{
         res.status(500).json({message: 'There was a problem creating your Quiz Question'})
     }
 });
+router.get('/', function(req, res){
+    Quiz
+    .find()
+    .then(quizdata =>{
+        res.json(quizdata);
+    });
+});
 router.get('/question/:id',function(req,res){
     Quiz
     .find({number: req.params.id})

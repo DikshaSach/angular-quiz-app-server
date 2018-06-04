@@ -3,7 +3,8 @@ var Schema = mongoose.Schema;
 var quizSchema = mongoose.Schema({
     question: {type: String},
     number: {type: Number},
-    answer: {type: String}
+    answer: {type: String},
+    answerchoices: {type: String}
 
 });
 
@@ -11,7 +12,8 @@ quizSchema.methods.serialize = function(){
     return{
         question: this.question,
         number: this.number,
-        answer: this.answer
+        answer: this.answer,
+        answerchoices: this.answerchoices
     }
 }
 

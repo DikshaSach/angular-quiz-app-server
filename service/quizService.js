@@ -8,13 +8,15 @@ function quizService(){
                 let{
                     question,
                     number,
-                    answer
+                    answer,
+                    answerchoices
                 } = quizObj;
                 let newQuiz = await Quiz
                 .create({
                     question, 
                     answer,
-                    number
+                    number,
+                    answerchoices
                 });
                 resolve(newQuiz);
             } catch(err){
